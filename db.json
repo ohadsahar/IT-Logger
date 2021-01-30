@@ -17,9 +17,9 @@
   ],
   "techs": [
     {
-      "id": 1,
       "firstName": "Ohad",
-      "lastName": "Sahar"
+      "lastName": "Sahar",
+      "id": 1
     }
   ]
 }
