@@ -36,7 +36,6 @@ TechListModal.propTypes = {
 
 const mapStateToProps = state => ({
     tech: state.tech,
-    getTechs: PropTypes.func.isRequired,
 })
 
 const modalStyle = {

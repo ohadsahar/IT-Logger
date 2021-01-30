@@ -27,12 +27,10 @@ const App = () => {
           <AddLogModal />
           <EditLogModal />
           <AddTechModal />
-   
           <Logs />
-     
+          <TechListModal />
+          <EditTechModal />
         </div>
-        <TechListModal />
-        <EditTechModal />
       </Fragment>
     </Provider>
   );
