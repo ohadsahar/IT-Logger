@@ -11,7 +11,6 @@ export const getTechs = () => async dispatch => {
             payload: data
         })
     } catch (error) {
-        console.log(error);
         dispatch({
             type: ERROR,
             payload: error.response.statusText
@@ -58,15 +57,12 @@ export const updateTech = (tech) => async dispatch => {
                 method: 'PUT', body: JSON.stringify(tech),
                 headers: { 'Content-Type': 'application/json' }
             });
-            console.log(result)
         const data = await result.json();
-        console.log(data);
         dispatch({
             type: UPDATE_TECH,
             payload: data
         })
     } catch (error) {
-        console.log(error);
         dispatch({
             type: ERROR,
             payload: error.response.statusText
@@ -76,7 +72,6 @@ export const updateTech = (tech) => async dispatch => {
 }
 
 export const setCurrent = (tech) => {
-    console.log(tech);
     return {
         type: SET_CURRENT_TECH,
         payload: tech

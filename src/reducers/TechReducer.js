@@ -16,7 +16,6 @@ export default (state = initialState, action) => {
                 loading: false
             }
         case ADD_TECH:
-            console.log()
             return {
                 ...state,
                 techs: [...state.techs, action.payload],
