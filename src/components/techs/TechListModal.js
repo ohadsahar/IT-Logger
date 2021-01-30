@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 const TechListModal = ({ tech: { techs, loading }, getTechs }) => {
 
     useEffect(() => {
+        console.log(techs);
         getTechs();
         //eslint-disable-next-line
     }, [])
@@ -32,8 +33,10 @@ TechListModal.propTypes = {
     tech: PropTypes.object.isRequired,
     getTechs: PropTypes.func.isRequired,
 }
+
 const mapStateToProps = state => ({
-    tech: state.tech
+    tech: state.tech,
+    getTechs: PropTypes.func.isRequired,
 })
 
 const modalStyle = {

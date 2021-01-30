@@ -1,43 +1,48 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { addTech } from '../../actions/techsActions';
-import M from 'materialize-css/dist/js/materialize.min.js';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import M from 'materialize-css/dist/js/materialize.min.js';
+import { connect } from 'react-redux';
+import { updateTech } from '../../actions/techsActions';
 
-
-const AddTechModal = ({ addTech }) => {
+const EditTechModal = ({ current, updateTech }) => {
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
+    useEffect(() => {
+        if (current) {
+            setFirstName(current.firstName);
+            setLastName(current.lastName);
+        }
+    }, [current])
+
+
     const onSubmit = () => {
         if (firstName === '' || lastName === '') {
-            M.toast({ html: 'Form invalid' });
+            M.toast({ html: 'Form invalid' })
         } else {
             const newTech = {
-                firstName: firstName, lastName: lastName
+                id: current.id,
+                firstName: firstName,
+                lastName: lastName
             }
-            addTech(newTech);
-            M.toast({ html: 'New tech created' });
-            setFirstName('');
-            setLastName('');
+            updateTech(newTech);
+            M.toast({ html: 'Tech has been updated successfully' })
         }
     }
 
     return (
-        <div id='tech-add-modal' className="modal" style={modalStyle}>
+        <div id='edit-tech' className="modal" style={modalStyle}>
             <div className="modal-content">
-                <h4>Enter Tech</h4>
+                <h4>Edit Tech</h4>
                 <div className="row">
                     <div className="input-field">
                         <input type="text" name='firstName' value={firstName} onChange={e => setFirstName(e.target.value)} />
-                        <label htmlFor="firstName" className="active">First name</label>
                     </div>
                 </div>
                 <div className="row">
                     <div className="input-field">
                         <input type="text" name='lastName' value={lastName} onChange={e => setLastName(e.target.value)} />
-                        <label htmlFor="lastName" className="active">Last name</label>
                     </div>
                 </div>
                 <div className="modal-footer">
@@ -46,15 +51,22 @@ const AddTechModal = ({ addTech }) => {
             </div>
         </div>
     )
+
+
 }
+
+EditTechModal.propTypes = {
+    current: PropTypes.object,
+    updateTech: PropTypes.func.isRequired,
+}
+
 const modalStyle = {
     width: '75%',
     height: '75%'
 }
 
+const mapStateToProps = state => ({
+    current: state.tech.current
+})
 
-AddTechModal.propTypes = {
-    addTech: PropTypes.func.isRequired,
-}
-
-export default connect(null, { addTech })(AddTechModal);
+export default connect(mapStateToProps, { updateTech })(EditTechModal);

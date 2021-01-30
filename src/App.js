@@ -1,15 +1,16 @@
-import React, { Fragment, useEffect } from 'react';
-import './App.scss';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import Navbar from './components/layout/Navbar';
-import Logs from './components/logs/Logs';
+import React, { Fragment, useEffect } from 'react';
+import { Provider } from 'react-redux';
+import './App.scss';
 import AddButton from './components/layout/AddButton';
+import Navbar from './components/layout/Navbar';
 import AddLogModal from './components/logs/AddLogModal';
 import EditLogModal from './components/logs/EditLogModal';
+import Logs from './components/logs/Logs';
 import AddTechModal from './components/techs/AddTechModal';
+import EditTechModal from './components/techs/EditTechModal';
 import TechListModal from './components/techs/TechListModal';
-import { Provider } from 'react-redux';
 import store from './store';
 
 const App = () => {
@@ -22,14 +23,16 @@ const App = () => {
       <Fragment>
         <Navbar />
         <div className="container">
-
-          <Logs />
           <AddButton />
+          <AddLogModal />
+          <EditLogModal />
+          <AddTechModal />
+   
+          <Logs />
+     
         </div>
-        <AddLogModal />
-        <EditLogModal />
-        <AddTechModal />
         <TechListModal />
+        <EditTechModal />
       </Fragment>
     </Provider>
   );

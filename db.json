@@ -1,28 +1,23 @@
 {
   "logs": [
     {
-      "message": "Need to add ram",
+      "message": "Add ram",
       "attention": true,
       "tech": "Ohad Sahar",
-      "date": "2021-01-30T07:47:32.643Z",
+      "date": "2021-01-30T15:09:41.835Z",
       "id": 1
     }
   ],
   "techs": [
     {
-      "id": "1",
-      "firstName": "Ohad",
-      "lastName": "Sahar"
+      "firstName": "מתן",
+      "lastName": "שבירו",
+      "id": 2
     },
     {
-      "id": "2",
-      "firstName": "Ohad",
-      "lastName": "Sahar"
-    },
-    {
-      "id": "3",
-      "firstName": "Ohad",
-      "lastName": "Sahar"
+      "firstName": "ohad",
+      "lastName": "sahar",
+      "id": 3
     }
   ]
 }

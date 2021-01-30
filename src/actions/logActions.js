@@ -1,4 +1,4 @@
-import { GET_LOGS, LOGS_ERROR, SET_LOADING, ADD_LOG, ERROR_TECH, DELETE_LOG, UPDATE_LOG, SET_CURRENT, CLEAR_CURRENT, SEARCH_LOG } from './types';
+import { GET_LOGS, ERROR, SET_LOADING, ADD_LOG, DELETE_LOG, UPDATE_LOG, LOG_SET_CURRENT, LOG_CLEAR_CURRENT, SEARCH_LOG } from './types';
 
 export const getLogs = () => async dispatch => {
     try {
@@ -11,7 +11,7 @@ export const getLogs = () => async dispatch => {
         })
     } catch (error) {
         dispatch({
-            type: LOGS_ERROR,
+            type: ERROR,
             payload: error.response.statusText
         })
     }
@@ -27,7 +27,7 @@ export const searchLog = (text) => async dispatch => {
             payload: data
         })
     } catch (error) {
-        dispatch({ type: LOGS_ERROR, payload: error.response.data });
+        dispatch({ type: ERROR, payload: error.response.data });
     }
 }
 
@@ -44,7 +44,7 @@ export const addLog = (log) => async dispatch => {
         dispatch({ type: ADD_LOG, payload: data });
     } catch (error) {
         dispatch({
-            type: LOGS_ERROR,
+            type: ERROR,
             payload: error.response.data
         })
     }
@@ -61,7 +61,7 @@ export const deleteLog = (id) => async dispatch => {
         })
     } catch (error) {
         dispatch({
-            type: ERROR_TECH,
+            type: ERROR,
             payload: error.response.data
         })
     }
@@ -78,7 +78,7 @@ export const updateLog = (log) => async dispatch => {
         })
     } catch (error) {
         dispatch({
-            type: ERROR_TECH,
+            type: ERROR,
             payload: error.response.data
         })
     }
@@ -86,14 +86,14 @@ export const updateLog = (log) => async dispatch => {
 
 export const setCurrent = log => {
     return {
-        type: SET_CURRENT,
+        type: LOG_SET_CURRENT,
         payload: log
     }
 }
 
 export const clearCurrent = () => {
     return {
-        type: CLEAR_CURRENT,
+        type: LOG_CLEAR_CURRENT,
     }
 }
 
