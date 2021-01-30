@@ -53,8 +53,14 @@ export const deleteTech = (id) => async dispatch => {
 export const updateTech = (tech) => async dispatch => {
     try {
         setLoading();
-        const result = await fetch(`http://localhost:5000/logs/${tech.id}`, { method: 'PUT', body: JSON.stringify(tech), headers: { 'Content-Type': 'application/json' } });
+        const result = await fetch(`http://localhost:5000/techs/${tech.id}`,
+            {
+                method: 'PUT', body: JSON.stringify(tech),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            console.log(result)
         const data = await result.json();
+        console.log(data);
         dispatch({
             type: UPDATE_TECH,
             payload: data

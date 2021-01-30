@@ -16,7 +16,8 @@ const TechItem = ({ tech, deleteTech, setCurrent }) => {
         <li className="collection-item">
             <div>
                 {tech.firstName} {tech.lastName}
-                <a href="#edit-tech" onClick={() => { setCurrent(tech) }} className="modal-trigger secondary-content">
+                <a href="#edit-tech" className="modal-trigger secondary-content">
+                    <i className="material-icons" onClick={() => { setCurrent(tech) }}>edit </i>
                 </a>
                 <a href="!#" onClick={onDelete} className="secondary-content">
                     <i className="material-icons grey-text">delete</i>

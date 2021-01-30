@@ -1,40 +1,25 @@
 {
   "logs": [
     {
-      "message": "New Ram Added",
-      "attention": true,
-      "tech": "Ohad Sahar",
-      "date": "2021-01-30T15:40:56.024Z",
-      "id": 1
-    },
-    {
       "id": 2,
       "message": "Added new ram to computer s3",
       "attention": false,
       "tech": "Ohad Sahar",
       "date": "2021-01-30T15:54:22.278Z"
+    },
+    {
+      "message": "New Hard Disk",
+      "attention": true,
+      "tech": "Ohad Sahar",
+      "date": "2021-01-30T18:44:02.479Z",
+      "id": 3
     }
   ],
   "techs": [
     {
-      "firstName": "מתן",
-      "lastName": "שבירו",
-      "id": 2
-    },
-    {
-      "firstName": "ohad",
-      "lastName": "sahar",
-      "id": 3
-    },
-    {
-      "firstName": "ohad",
-      "lastName": "sahar",
-      "id": 4
-    },
-    {
-      "firstName": "ohad",
-      "lastName": "sahar",
-      "id": 5
+      "id": 1,
+      "firstName": "Matan",
+      "lastName": "Shaviro"
     }
   ]
 }

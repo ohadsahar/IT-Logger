@@ -70,7 +70,10 @@ export const deleteLog = (id) => async dispatch => {
 export const updateLog = (log) => async dispatch => {
     try {
         setLoading();
-        const result = await fetch(`http://localhost:5000/logs/${log.id}`, { method: 'PUT', body: JSON.stringify(log), headers: { 'Content-Type': 'application/json' } });
+        const result = await fetch(`http://localhost:5000/logs/${log.id}`, {
+            method: 'PUT', body: JSON.stringify(log),
+            headers: { 'Content-Type': 'application/json' }
+        });
         const data = await result.json();
         dispatch({
             type: UPDATE_LOG,
