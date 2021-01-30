@@ -1,11 +1,18 @@
 {
   "logs": [
     {
-      "message": "Add ram",
+      "message": "New Ram Added",
       "attention": true,
       "tech": "Ohad Sahar",
-      "date": "2021-01-30T15:09:41.835Z",
+      "date": "2021-01-30T15:40:56.024Z",
       "id": 1
+    },
+    {
+      "id": 2,
+      "message": "Added new ram to computer s3",
+      "attention": false,
+      "tech": "Ohad Sahar",
+      "date": "2021-01-30T15:54:22.278Z"
     }
   ],
   "techs": [
@@ -18,6 +25,16 @@
       "firstName": "ohad",
       "lastName": "sahar",
       "id": 3
+    },
+    {
+      "firstName": "ohad",
+      "lastName": "sahar",
+      "id": 4
+    },
+    {
+      "firstName": "ohad",
+      "lastName": "sahar",
+      "id": 5
     }
   ]
 }
