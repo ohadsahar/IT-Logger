@@ -16,13 +16,13 @@ import store from './store';
 const App = () => {
   useEffect(() => {
     M.AutoInit();
-  });
+  }, []);
 
   return (
     <Provider store={store}>
       <Fragment>
         <Navbar />
-        <div className="container">
+        <div className='container'>
           <AddButton />
           <AddLogModal />
           <EditLogModal />
@@ -34,6 +34,6 @@ const App = () => {
       </Fragment>
     </Provider>
   );
-}
+};
 
 export default App;
